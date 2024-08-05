@@ -52,85 +52,16 @@ Most of the heap operations run in proportion to its height, so the running time
 
 ### Visualising Heap Operations
 
+#### Insert
+
+![alt text](docs/heap-insert.png)
+
+
+#### Extract Max
+
 ![alt text](docs/extract-max.png)
 
 
-
-
-```py
-
-def max_heapify(self, i):
-    """
-    Maintains the heap invariant for a max heap in `O(lg n)` time.
-    It assumes the heaps rooted at `left(i)` and `right(i)` are max heaps
-    but the element at index `i` may be smaller than its children, which breaks the heap invariant.
-    The `max_heapify` routine shifts the element at `i` down the heap so that the subtree rooted at index `i` satisfies the max-heap invariant.
-
-    Args:
-        i (int): The index of the heap element.
-
-    Example:
-        Suppose we have a max heap with the following elements:
-        H = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1]
-        and we want to maintain the heap invariant for the element at index 1, H[1] = 4.
-        The max_heapify routine will shift the element at index 1 down the heap so that the subtree rooted at index 1
-        satisfies the max-heap invariant.
-
-      
-                  ______16______
-                 /              \
-             ___4__           __10__    
-            /       \        /      \
-          _14        7      9        3
-         /  \      /  
-        2    8    1 
-        
-
-        After the first call to max_heapify(1), the heap will look like this:
-
-        
-                  ______16______
-                 /              \
-             ___14__          __10__    
-            /       \        /      \
-          _4         7      9        3
-         /  \      /  
-        2    8    1
-        
-
-        Notice that 4 was swapped with 14 and the heap rooted at 14 is now a max heap.
-        However, the heap rooted at 4 still breaks the max heap invariant. The routine will be recursively called again.
-        After the second call to max_heapify(4), the heap will look like this:
-
-        
-                  ______16______
-                 /              \
-             ___14__          __10__    
-            /       \        /      \
-          _8         7      9        3
-         /  \      /  
-        2    4    1            
-        
-        
-        Now the heap rooted at 4 is a max heap and the max heap invariant is satisfied for the entire heap.
-    """
-    left = self.left(i)
-    right = self.right(i)
-    largest = i 
-
-    heap = self.data
-    heap_size = self.heap_size
-
-    if left <= heap_size and heap[left] > heap[i]:
-        largest = left
-    
-    if right <= heap_size and heap[right] > heap[largest]:
-        largest = right
-
-    if largest != i:
-        self.datH[i], self.data[largest] = self.data[largest], self.datH[i]
-        self.max_heapify(largest)
-```
 
 
 ## References
