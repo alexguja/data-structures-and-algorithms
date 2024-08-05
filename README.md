@@ -1,6 +1,6 @@
-## Classic Data Structures and Algorithms in Python
+# Classic Data Structures and Algorithms in Python
 
-### Virtual Environment
+## Virtual Environment
 
 To create a virtual environment for the project, run
 ```sh
@@ -21,9 +21,9 @@ python3 -m pip install -r requirements.txt
 ```
 
 
-## Data Structures
+# Data Structures
 
-### Binary Heaps
+## Binary Heaps
 The concept of the _binary heap_ was introduced by J. W. J. Williams in 1964. He described the heap data structure in his paper "Algorithm 232: Heapsort". The heap data structure is an array that can be viewed as a nearly complete binary tree. Each element of the heap corresponds to an element in the array. The tree is filled on all levels except possibly the lowest, which is filled from the left up to a point.
 
 ![alt text](docs/heap.png)
@@ -49,6 +49,12 @@ Most of the heap operations run in proportion to its height, so the running time
 
 - For $n$ elements, the number of levels in a heap needed to store the the elements can be determined by $L(n) = 1 + ⌊lg(n)⌋$ where $L(n)$ is the number of levels.
 - The running time of heapsort is $O(n \lg n)$.
+
+### Visualising Heap Operations
+
+![alt text](docs/extract-max.png)
+
+
 
 
 ```py
