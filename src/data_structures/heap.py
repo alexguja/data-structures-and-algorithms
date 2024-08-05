@@ -44,7 +44,7 @@ class MaxHeap:
         self.__bubble_up(i)
 
     def increase_key(self, i, key):
-        """Increases the value of element at index `i` to `key`."""
+        """Increases the value of element at index i to key."""
 
         if key < self.data[i]:
             raise ValueError("New key is smaller than current key")
@@ -52,7 +52,7 @@ class MaxHeap:
         self.__bubble_up(i)
 
     def delete(self, i):
-        """Deletes the element at index `i`."""
+        """Deletes the element at index i."""
         self.increase_key(i, float("inf"))
         self.data[0] = self.data[self.heap_size - 1]
         self.data.pop()
@@ -87,3 +87,9 @@ class MaxHeap:
 
     def __swap(self, i, j):
         self.data[i], self.data[j] = self.data[j], self.data[i]
+
+    def __bubble_up(self, i):
+        while i > 0 and self.data[self.parent(i)] < self.data[i]:
+            self.__swap(i, self.parent(i))
+            i = self.parent(i)
+    
