@@ -54,12 +54,17 @@ Most of the heap operations run in proportion to its height, so the running time
 
 #### Insert
 
-![alt text](docs/heap-insert.png)
+![heap-insert](docs/heap-insert.png)
 
 
 #### Extract Max
 
-![alt text](docs/extract-max.png)
+![heap-extract-max](docs/extract-max.png)
+
+
+#### Max Heapify
+
+![max-heapify](docs/max-heapify.png)
 
 
 ### Heaps Summary
