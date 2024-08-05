@@ -62,6 +62,19 @@ Most of the heap operations run in proportion to its height, so the running time
 ![alt text](docs/extract-max.png)
 
 
+### Heaps Summary
+
+
+| Operation    | Time Complexity | Notes |
+| ------------ | --------------- | ----- |
+| Insert       | $O(lg(n))$      |       |
+| Extract Max  | $O(lg(n))$      |       |
+| Increase Key | $O(lg(n))$      |       |
+| Delete       | $O(lg(n))$      |       |
+| Max Key      | $O(1)$          |       |
+| Max Heapify  | $O(n)$          |       |
+| Build Heap   | $O(n)$          |       |
+| Heapsort     | $O(n \lg (n))$  |       |
 
 
 ## References
