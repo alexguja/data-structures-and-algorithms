@@ -106,7 +106,7 @@ class MaxHeap:
         max_element = self.data[0]
         self.data[0] = self.data[self.heap_size - 1]
         self.heap_size -= 1
-        self.data.pop()
+        # self.data.pop() # optionally remove the last element
         self.max_heapify(0)
 
         return max_element
