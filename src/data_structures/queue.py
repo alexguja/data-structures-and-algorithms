@@ -5,7 +5,7 @@ class Queue:
         self.queue = LinkedList()
     
     def enqueue(self, value):
-        self.queue.insert_last(value)
+        self.queue.append(value)
 
 
     def dequeue(self):
@@ -13,5 +13,5 @@ class Queue:
             return None
         else:
             dequeued_value = self.queue.head.data
-            self.queue.delete_first()
+            self.queue.delete_head()
             return dequeued_value

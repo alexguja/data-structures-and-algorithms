@@ -128,4 +128,3 @@ class LinkedList:
         """Returns True if the list is empty, False otherwise."""
 
         return self.head is None
-    
