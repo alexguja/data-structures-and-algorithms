@@ -44,17 +44,14 @@ Linked lists come in various forms, such as singly linked lists, doubly linked l
 
 ### List Operations Summary
 
-| Operation        | Unsorted, Singly Linked | Sorted, Singly Linked | Unsorted, Doubly Linked | Sorted, Doubly Linked |
-| ---------------- | ----------------------- | --------------------- | ----------------------- | --------------------- |
-| `search(k)`      | $O(n)$                  | $O(n)$                | $O(n)$                  | $O(n)$                |
-| `insert(x)`      | $O(1)$                  | $O(n)$                | $O(1)$                  | $O(n)$                |
-| `delete(x)`      | $O(n)$                  | $O(n)$                | $O(1)$                  | $O(1)$                |
-| `successor(x)`   | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
-| `predecessor(x)` | N/A                     | N/A                   | $O(1)$                  | $O(1)$                |
-| `minimum()`      | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
-| `maximum()`      | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
-
-
+| Operation    | Unsorted, Singly Linked | Sorted, Singly Linked | Unsorted, Doubly Linked | Sorted, Doubly Linked |
+| ------------ | ----------------------- | --------------------- | ----------------------- | --------------------- |
+| `prepend(x)` | $O(1)$                  | $O(n)$                | $O(1)$                  | $O(n)$                |
+| `append(x)`  | $O(1)$                  | $O(n)$                | $O(1)$                  | $O(n)$                |
+| `find(k)`    | $O(n)$                  | $O(n)$                | $O(n)$                  | $O(n)$                |
+| `delete(x)`  | $O(n)$                  | $O(n)$                | $O(1)$                  | $O(1)$                |
+| `minimum()`  | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
+| `maximum()`  | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
 
 
 ## Binary Heaps
