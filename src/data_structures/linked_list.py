@@ -1,164 +1,131 @@
 class ListNode:
-  def __init__(self, data, next=None):
-    self.data, self.next = data, next
+    def __init__(self, key, data, next=None, prev=None):
+        self.key = key
+        self.data = data
+        self.next = next
+        self.prev = prev
 
 
 class LinkedList:
-  def __init__(self):
-    self.head = self.tail = None
-    self.length = 0
+    """A singly linked list implementation"""
 
-  def __str__(self):
-    if self.is_empty():
-        return ""
-    else:
-        list_string = "Head"
-        current_node = self.head
-
-        for _ in range(self.length):
-            list_string = f"{list_string} -> {current_node.data}"
-            current_node = current_node.next
-
-        return f"{list_string} -> None"
+    def __init__(self):
+        self.head, self.tail = None
+        self.size = 0
 
 
-  def is_empty(self):
-    return self.length == 0
+    def prepend(self, key, data):
+        """Inserts a new node at the head of the list."""
 
+        node = ListNode(key, data)
+        node.next = self.head
+        self.head = node
 
-  def insert_first(self, data):
-    new_node = ListNode(data, self.head)
-    self.head = new_node
-    self.length += 1
+    def append(self, key, data):
+        """Inserts a new node at the tail of the list."""
 
-    if not self.tail:
-      self.tail = new_node
-
-
-  def insert_last(self, data):
-    new_node = ListNode(data)
-
-    if self.is_empty():
-      self.head = self.tail =  new_node
-      self.length += 1
-    else:
-      self.tail.next = new_node
-      self.tail = new_node
-      self.length += 1
-
-
-  def build_from(self, array):
-    for item in array:
-      self.insert_last(item)
-
-
-  def delete_first(self):
-    deleted_item = None
-
-    if not self.is_empty():
-      deleted_item = self.head.data
-
-      if self.head == self.tail:
-        self.head = self.tail = None
-      else:
-        self.head = self.head.next
-      self.length -= 1
-    
-    return deleted_item
-
-
-  def delete_last(self):
-    deleted_item = None
-
-    if not self.is_empty():
-        if self.head == self.tail: 
-            deleted_item = self.head.data
-            self.head = self.tail = None
+        node = ListNode(key, data)
+        if not self.head:
+            self.head = node
+            self.tail = node
         else:
-            current_node = self.head
-            for _ in range(self.length - 2):
-                current_node = current_node.next
-            deleted_item = current_node.next.data
-            self.tail = current_node
-            current_node.next = None
-        self.length -= 1
+            self.tail.next = node
+            self.tail = node
+        self.size += 1
 
-    return deleted_item
+    def delete_head(self) -> ListNode:
+        """Deletes the head node of the list.
 
+        Returns:
+            ListNode: The node that was deleted or None if the list is empty
+        """
+        if self.is_empty():
+            return None
 
-  def get_at(self, idx):
-    if self.is_empty() or idx < 0 or idx >= self.length:
-      return None
+        node = self.head # node to delete
+        self.head = self.head.next
+        if self.head is None:
+            self.tail = None
+        self.size -= 1
+        return node
 
-    if idx == 0:
-      return self.head.data
+    def delete_tail(self) -> ListNode:
+        """Deletes the tail node from the list.
+        Returns:
+            ListNode: The node that was deleted or None if the list is empty
+        """
+        if self.is_empty():
+            return None
 
-    if idx == self.length - 1:
-      return self.tail.data
+        if self.head == self.tail:
+            return self.delete_head()
 
-    current_node = self.head
-    for _ in range(idx):
-      current_node = current_node.next 
+        prev = self.head
+        while prev.next != self.tail:
+            prev = prev.next
 
-    return current_node.data
+        node = self.tail
+        self.tail = prev
+        self.tail.next = None
+        self.size -= 1
+        return node
+    
+    def delete(self, key) -> ListNode:
+        """Deletes a node from the list based on the given key.
+        Args:
+            key: The key of the node to delete
 
+        Returns:
+            ListNode: The node that was deleted or None if the key is not found
+        """
+        
+        # Empty list edge case
+        if self.__is_empty():
+            return None
+        
+        # If the key is the head
+        if self.head.key == key:
+            return self.delete_head()
 
-  def set_at(self, idx, data):
-    if self.is_empty() or idx < 0 or idx >= self.length:
-      return None
+        # Traverse to find the previous node to the node to delete
+        prev = self.head
+        node = self.head.next # node to delete
 
-    if idx == 0:
-      self.head.data = data
-      return
+        while node is not None and node.key != key:
+          prev = node
+          node = node.next
 
-    if idx == self.length - 1:
-      self.tail.data = data
-      return
+        if node is None:
+          return None
+        
+        # Skip over the node to delete
+        prev.next = node.next
 
-    current_node = self.head
-    for _ in range(idx):
-      current_node = current_node.next
+        # If the node to delete is the tail, update the tail pointer
+        if node == self.tail:
+            return self.delete_tail()
 
-    current_node.data = data
+        self.size -= 1
+        return node
+    
+    def find(self, key) -> ListNode:
+        """Returns the node containing the search key.
 
+        Args:
+            key: The key to search for
 
-  def insert_at(self, idx, data):
-    if idx < 0 or idx > self.length:
-      return None
+        Returns:
+            ListNode: The node containing the search key or None if the data is not found 
+        """
+        node = self.head # current node
 
-    if idx == 0:
-      self.insert_first(data)
-      return
+        # Time Complexity: O(n) - need to traverse the entire list in the worst case
+        while node is not None and node.key != key:
+            node = node.next
+        return node
+    
+    def __is_empty(self) -> bool:
+        """Returns True if the list is empty, False otherwise."""
 
-    if idx == self.length:
-      self.insert_last(data)
-      return
-
-    current_node = self.head
-    for _ in range(idx - 1):
-      current_node = current_node.next
-
-    new_node = ListNode(data, current_node.next)
-    current_node.next = new_node
-    self.length += 1
-
-  
-  def delete_at(self, idx):
-    if idx < 0 or idx >= self.length:
-      return None
-
-    if idx == 0:
-      return self.delete_first()
-
-    if idx == self.length - 1:
-      return self.delete_last()
-
-    current_node = self.head
-    for _ in range(idx - 1):
-      current_node = current_node.next
-
-    deleted_item = current_node.next.data
-    current_node.next = current_node.next.next
-    self.length -= 1
-
-    return deleted_item
+        return self.head is None
+    
