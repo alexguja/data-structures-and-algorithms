@@ -23,6 +23,40 @@ python3 -m pip install -r requirements.txt
 
 # Data Structures
 
+## Linked Lists
+
+A _linked list_ is a data structure that stores objects in a linear order.
+Unlike an array, a linked list does not store its elements in contiguous memory locations. Instead, each element in a linked list is stored in a node that contains a pointer to the next node in the sequence.
+Linked lists come in various forms, such as singly linked lists, doubly linked lists, and circular linked lists. 
+
+### Terminology
+- The first element or node of a linked list is called the _head_ of the list.
+- The last element or node of a linked list is called the _tail_ of the list.
+- A linked list is _empty_ if it does not contain any elements.
+- The _size_ of a linked list is the number of elements it contains.
+- A linked list is _circular_ if the last node points to the first node.
+- A linked list is _singly linked_ if each node contains a reference to the next node.
+- A linked list is _doubly linked_ if each node contains references to the next and previous nodes.
+- A linked list is _sorted_ if its elements are arranged in a increasing or decreasing order.
+- A linked list is _unsorted_ if its elements are not arranged in any particular order.
+
+
+
+### List Operations Summary
+
+| Operation        | Unsorted, Singly Linked | Sorted, Singly Linked | Unsorted, Doubly Linked | Sorted, Doubly Linked |
+| ---------------- | ----------------------- | --------------------- | ----------------------- | --------------------- |
+| `search(k)`      | $O(n)$                  | $O(n)$                | $O(n)$                  | $O(n)$                |
+| `insert(x)`      | $O(1)$                  | $O(n)$                | $O(1)$                  | $O(n)$                |
+| `delete(x)`      | $O(n)$                  | $O(n)$                | $O(1)$                  | $O(1)$                |
+| `successor(x)`   | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
+| `predecessor(x)` | N/A                     | N/A                   | $O(1)$                  | $O(1)$                |
+| `minimum()`      | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
+| `maximum()`      | $O(n)$                  | $O(1)$                | $O(n)$                  | $O(1)$                |
+
+
+
+
 ## Binary Heaps
 The concept of the _binary heap_ was introduced by J. W. J. Williams in 1964. He described the heap data structure in his paper "Algorithm 232: Heapsort". The heap data structure is an array that can be viewed as a nearly complete binary tree. Each element of the heap corresponds to an element in the array. The tree is filled on all levels except possibly the lowest, which is filled from the left up to a point.
 
@@ -72,14 +106,14 @@ Most of the heap operations run in proportion to its height, so the running time
 
 | Operation        | Time Complexity | Notes                                                         |
 | ---------------- | --------------- | ------------------------------------------------------------- |
-| `insert`         | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
-| `extract_max`    | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
-| `increase_key`   | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
-| `delete`         | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
+| `insert`         | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
+| `extract_max`    | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
+| `increase_key`   | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
+| `delete`         | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
 | `max_key`        | $O(1)$          |                                                               |
-| `max_hapify`     | $O(lg (n))$     |                                                               |
+| `max_hapify`     | $O(lg n)$       |                                                               |
 | `build_max_heap` | $O(n)$          |                                                               |
-| `heapsort`       | $O(n \lg (n))$  | Maintaining the heap invariant for n nodes  takes $O(n lg n)$ |
+| `heapsort`       | $O(n \lg n)$    | Maintaining the heap invariant for n nodes  takes $O(n lg n)$ |
 
 
 ## References
