@@ -104,16 +104,16 @@ Most of the heap operations run in proportion to its height, so the running time
 ### Heaps Summary
 
 
-| Operation        | Time Complexity | Notes                                                         |
-| ---------------- | --------------- | ------------------------------------------------------------- |
-| `insert`         | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
-| `extract_max`    | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
-| `increase_key`   | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
-| `delete`         | $O(lg n)$       | Maintaining the heap invariant takes $O(lg n)$                |
-| `max_key`        | $O(1)$          |                                                               |
-| `max_hapify`     | $O(lg n)$       |                                                               |
-| `build_max_heap` | $O(n)$          |                                                               |
-| `heapsort`       | $O(n \lg n)$    | Maintaining the heap invariant for n nodes  takes $O(n lg n)$ |
+| Operation        | Time Complexity | Notes                                                          |
+| ---------------- | --------------- | -------------------------------------------------------------- |
+| `insert`         | $O(\lg n)$      | Maintaining the heap invariant takes $O(\lg n)$                |
+| `extract_max`    | $O(\lg n)$      | Maintaining the heap invariant takes $O(\lg n)$                |
+| `increase_key`   | $O(\lg n)$      | Maintaining the heap invariant takes $O(\lg n)$                |
+| `delete`         | $O(\lg n)$      | Maintaining the heap invariant takes $O(\lg n)$                |
+| `max_key`        | $O(1)$          | Constant time                                                  |
+| `max_hapify`     | $O(\lg n)$      | Proportional to the height of the heap $O(h) , h = \lg n$      |
+| `build_max_heap` | $O(n)$          | Proportional to the size of the array                          |
+| `heapsort`       | $O(n \lg n)$    | Maintaining the heap invariant for n nodes  takes $O(n \lg n)$ |
 
 
 ## References
