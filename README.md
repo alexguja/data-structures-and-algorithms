@@ -70,17 +70,17 @@ Most of the heap operations run in proportion to its height, so the running time
 ### Heaps Summary
 
 
-| Operation        | Time Complexity | Notes |
-| ---------------- | --------------- | ----- |
-| `insert`         | $O(lg(n))$      |       |
-| `extract_max`    | $O(lg(n))$      |       |
-| `increase_key`   | $O(lg(n))$      |       |
-| `delete`         | $O(lg(n))$      |       |
-| `max_key`        | $O(1)$          |       |
-| `max_hapify`     | $O(n)$          |       |
-| `build_max_heap` | $O(n)$          |       |
-| `heapsort`       | $O(n \lg (n))$  |       |
+| Operation        | Time Complexity | Notes                                                         |
+| ---------------- | --------------- | ------------------------------------------------------------- |
+| `insert`         | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
+| `extract_max`    | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
+| `increase_key`   | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
+| `delete`         | $O(lg(n))$      | Maintaining the heap invariant takes $O(lg n)$                |
+| `max_key`        | $O(1)$          |                                                               |
+| `max_hapify`     | $O(lg (n))$     |                                                               |
+| `build_max_heap` | $O(n)$          |                                                               |
+| `heapsort`       | $O(n \lg (n))$  | Maintaining the heap invariant for n nodes  takes $O(n lg n)$ |
 
 
 ## References
-[1] - https://www.youtube.com/watch?v=5iBUTMWGtIQ
+[1] - CLRS Introduction to Algorithms
