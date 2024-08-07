@@ -10,7 +10,8 @@ class LinkedList:
     """A singly linked list implementation"""
 
     def __init__(self):
-        self.head, self.tail = None
+        self.head= None
+        self.tail = None
         self.size = 0
 
 
@@ -91,7 +92,7 @@ class LinkedList:
         prev = self.head
         node = self.head.next # node to delete
 
-        while node is not None and node.key != key:
+        while node and node.key != key:
           prev = node
           node = node.next
 
@@ -120,7 +121,7 @@ class LinkedList:
         node = self.head # current node
 
         # Time Complexity: O(n) - need to traverse the entire list in the worst case
-        while node is not None and node.key != key:
+        while node and node.key != key:
             node = node.next
         return node
     

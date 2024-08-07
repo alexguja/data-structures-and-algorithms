@@ -20,8 +20,85 @@ Install the required packages by running
 python3 -m pip install -r requirements.txt
 ```
 
+## Timeline of Classic Algorithms and Data Structures
+
+### Pre-1950s
+- Linked List: Invented by Konrad Zuse in 1945 as part of his Z4 computer design.
+- Binary Search: First binary search algorithm published by John Mauchly in 1946.
+
+### 1950s
+- Queue: Basic concept dates back to early computer science literature in the 1950s.
+- Stack: Basic concept dates back to early computer science literature in the 1950s.
+- Binary Heap: Introduced by J. W. J. Williams in 1964, with roots in early computer science concepts from the 1950s.
+- Binary Search Tree: Developed in the early 1960s by several researchers independently, but with foundational work in the late 1950s.
+
+### 1960s
+- Breadth First Search (BFS): Concept formalized by C. Y. Lee in 1961.
+- Depth First Search (DFS): Developed around the same time as BFS.
+- Merge Sort: Developed by John von Neumann in 1945 but gained popularity in the 1960s.
+- Hash Table: Concept developed in the 1950s, formalized in the 1960s.
+
+### 1970s
+- Heapsort: Invented by J. W. J. Williams in 1964, but gained recognition in the 1970s.
+- Quicksort: Developed by Tony Hoare in 1959, but popularized in the 1970s.
+- Dynamic Array: Concept developed with foundational work on array structures in the 1970s.
+- AVL Tree: Invented by Georgy Adelson-Velsky and Evgenii Landis in 1962.
+- Trie: Invented by René de la Briandais in 1959, but popularized in the 1970s.
+
+### 1980s
+- Rabin-Karp Algorithm: Developed by Richard M. Karp and Michael O. Rabin in 1987.
+- Dijkstra's Algorithm: Invented by Edsger W. Dijkstra in 1956 but saw increased application in the 1980s.
+- Bellman-Ford Algorithm: Developed by Richard Bellman and Lester Ford in 1958, with wide application in the 1980s.
+- Topological Sort: Algorithmic applications popularized in the 1980s.
+
+### 1990s
+- Randomized Quicksort: Variants developed and studied extensively in the 1990s.
+
+### 2000s
+- Two Pointers: Widely used as a technique in computer programming competitions and algorithm problems in the 2000s.
+- Sliding Window: Gained popularity as an algorithmic technique in competitive programming in the 2000s.
+
+### 2010s and Beyond
+- Counting Sort: Basic concept developed in the mid-20th century, gained popularity in educational materials in recent years.
+- Radix Sort: Concept dates back to early 20th century but widely taught and used in modern computer science education.
+
+This timeline captures the approximate periods when these algorithms and data structures were either invented or gained significant recognition and application.
+
+
+# Algorithms
+
+- [ ] Two Pointers
+- [x] Binary Search
+- [ ] Sorting
+  - [x] Insertion Sort
+  - [x] Heapsort
+  - [x] Merge Sort
+  - [ ] Quicksort
+  - [ ] Randomised Quicksort
+  - [ ] Counting Sort
+  - [ ] Radix Sort
+- [ ] Sliding Window
+- [ ] Rabin-Karp
+- [ ] Breadth First Search
+- [ ] Depth First Search
+- [ ] Topological Sort
+- [ ] Dijkstra's Algorithm
+- [ ] Bellman-Ford Algorithm
+  
 
 # Data Structures
+
+- [ ] Dynamic Array
+- [x] Linked List
+- [x] Stack
+- [x] Queue
+- [x] Hash Table
+- [x] Binary Heap
+- [x] Binary Search Tree
+- [ ] AVL Tree
+- [ ] Graph
+- [ ] Trie
+
 
 ## Linked Lists
 

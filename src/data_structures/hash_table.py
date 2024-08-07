@@ -86,8 +86,3 @@ class HashTable:
                 entry = entry.next
         self.size = new_table.size
         self.table = new_table.table
-    
-
-
-
-
