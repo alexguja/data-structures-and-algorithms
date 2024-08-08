@@ -2,7 +2,7 @@ from data_structures.queue import Queue
 
 def bfs(graph, start_vertex):
     visited = set()
-    queue = Queue()
+    queue = Queue() # FIFO data structure
 
     queue.enqueue(start_vertex)
     visited.add(start_vertex)
