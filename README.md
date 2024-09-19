@@ -79,8 +79,8 @@ This timeline captures the approximate periods when these algorithms and data st
   - [ ] Radix Sort
 - [ ] Sliding Window
 - [ ] Rabin-Karp
-- [ ] Breadth First Search
-- [ ] Depth First Search
+- [x] Breadth First Search
+- [x] Depth First Search
 - [ ] Topological Sort
 - [ ] Dijkstra's Algorithm
 - [ ] Bellman-Ford Algorithm
