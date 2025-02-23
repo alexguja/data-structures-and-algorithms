@@ -10,10 +10,9 @@ class LinkedList:
     """A singly linked list implementation"""
 
     def __init__(self):
-        self.head= None
+        self.head = None
         self.tail = None
         self.size = 0
-
 
     def prepend(self, key, data):
         """Inserts a new node at the head of the list."""
@@ -43,7 +42,7 @@ class LinkedList:
         if self.is_empty():
             return None
 
-        node = self.head # node to delete
+        node = self.head  # node to delete
         self.head = self.head.next
         if self.head is None:
             self.tail = None
@@ -70,7 +69,7 @@ class LinkedList:
         self.tail.next = None
         self.size -= 1
         return node
-    
+
     def delete(self, key) -> ListNode:
         """Deletes a node from the list based on the given key.
         Args:
@@ -79,26 +78,26 @@ class LinkedList:
         Returns:
             ListNode: The node that was deleted or None if the key is not found
         """
-        
+
         # Empty list edge case
         if self.__is_empty():
             return None
-        
+
         # If the key is the head
         if self.head.key == key:
             return self.delete_head()
 
         # Traverse to find the previous node to the node to delete
         prev = self.head
-        node = self.head.next # node to delete
+        node = self.head.next  # node to delete
 
         while node and node.key != key:
-          prev = node
-          node = node.next
+            prev = node
+            node = node.next
 
         if node is None:
-          return None
-        
+            return None
+
         # Skip over the node to delete
         prev.next = node.next
 
@@ -108,7 +107,7 @@ class LinkedList:
 
         self.size -= 1
         return node
-    
+
     def find(self, key) -> ListNode:
         """Returns the node containing the search key.
 
@@ -116,16 +115,16 @@ class LinkedList:
             key: The key to search for
 
         Returns:
-            ListNode: The node containing the search key or None if the data is not found 
+            ListNode: The node containing the search key or None if the data is not found
         """
-        node = self.head # current node
+        node = self.head  # current node
 
         # Time Complexity: O(n) - need to traverse the entire list in the worst case
         while node and node.key != key:
             node = node.next
         return node
-    
-    def __is_empty(self) -> bool:
+
+    def is_empty(self) -> bool:
         """Returns True if the list is empty, False otherwise."""
 
         return self.head is None
