@@ -4,7 +4,7 @@ PYTEST = pytest
 SRC_DIR = src
 TESTS_DIR = $(SRC_DIR)
 REQUIREMENTS = requirements.txt
-VENV_DIR = dsa_venv
+VENV_DIR = dsa_env
 VENV_ACTIVATE = $(VENV_DIR)/bin/activate
 
 
