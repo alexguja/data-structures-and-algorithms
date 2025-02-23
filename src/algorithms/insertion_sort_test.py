@@ -1,4 +1,4 @@
-from algorithms.insertions_sort import insertion_sort
+from algorithms.insertion_sort import insertion_sort
 
 def test_insertion_sort():
     array = [5, 2, 4, 6, 1, 3]
