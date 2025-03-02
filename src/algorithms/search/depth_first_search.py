@@ -1,4 +1,5 @@
-from data_structures.stack import Stack
+from data_structures.stack.stack import Stack
+
 
 def dfs(graph):
     parent_vertices = {}
@@ -22,7 +23,7 @@ def dfs_visit(graph, start_vertex, visited, parent_vertices):
 
 def dfs_iterative(graph, start_vertex):
     visited = set()
-    stack = Stack() # LIFO data structure 
+    stack = Stack()  # LIFO data structure
 
     stack.push(start_vertex)
     visited.add(start_vertex)

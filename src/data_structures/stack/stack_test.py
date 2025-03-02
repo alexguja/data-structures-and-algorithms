@@ -1,5 +1,6 @@
 import pytest
-from data_structures.stack import Stack
+from data_structures.stack.stack import Stack
+
 
 def test_stack():
     stack = Stack()

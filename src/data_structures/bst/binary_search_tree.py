@@ -13,8 +13,8 @@ class BinarySearchTree:
     def insert(self, key, value):
         new_node = TreeNode(key, value)
 
-        node = None        # current node
-        parent = self.root # parent of the current node
+        node = None  # current node
+        parent = self.root  # parent of the current node
 
         while parent:
             node = parent
@@ -22,7 +22,7 @@ class BinarySearchTree:
                 parent = parent.left
             else:
                 parent = parent.right
-        
+
         new_node.parent = node
 
         # Edge case for an empty tree
@@ -32,7 +32,6 @@ class BinarySearchTree:
             node.left = new_node
         else:
             node.right = new_node
-
 
     def delete(self, key):
         node = self.root
@@ -74,7 +73,6 @@ class BinarySearchTree:
             node.key, node.value = successor.key, successor.value
             self.__delete_successor(node.right, successor.key)
 
-
     def in_order_traversal(self):
         """Performs an in-order tree walk."""
 
@@ -82,8 +80,7 @@ class BinarySearchTree:
             self.in_order_traversal(self.root.left)
             print(self.root.key)
             self.in_order_traversal(self.root.right)
-        
-    
+
     def find(self, key):
         """Finds a node with the given key in the BST"""
 
@@ -93,8 +90,7 @@ class BinarySearchTree:
             return self.find(self.root.left, key)
         else:
             return self.find(self.root.right, key)
-        
-    
+
     def find_iterative(self, key):
         """Finds a node with the given key in the BST iteratively."""
 
@@ -108,7 +104,6 @@ class BinarySearchTree:
 
         return node
 
-
     def minimum(self, node):
         """Finds the minimum key in the BST."""
 
@@ -116,7 +111,7 @@ class BinarySearchTree:
             node = node.left
 
         return node
-    
+
     def maximum(self, node):
         """Finds the maximum key in the BST."""
 
@@ -124,20 +119,20 @@ class BinarySearchTree:
             node = node.right
 
         return node
-    
+
     def successor(self, node):
         """Finds the successor of a given node."""
 
         if node.right:
             return self.minimum(node.right)
-        
+
         parent = node.parent
         while parent and node == parent.right:
             node = parent
             parent = parent.parent
-        
+
         return parent
-    
+
     def __delete_successor(self, node, key):
         parent = None
         while node and node.key != key:
